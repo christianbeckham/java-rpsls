@@ -1,7 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Welcome to RPSLS");
+        System.out.println("Welcome to RPSLS \n");
 
-        Game.displayWelcome();
+        Game game = new Game();
+        game.displayWelcome();
+        game.run();
+
     }
 }
