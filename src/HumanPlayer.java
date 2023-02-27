@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HumanPlayer {
+public class HumanPlayer implements Player {
     private String name;
     private int score = 0;
 
@@ -24,11 +24,12 @@ public class HumanPlayer {
         this.score = score;
     }
 
-    public String makeChoice() {
-        String[] choices = DrawOption.getItems();
+    @Override
+    public Item makeChoice() {
+        Item[] choices = DrawOption.getItems();
 
         for (int i = 0; i < choices.length; i++) {
-            System.out.println("Select " + (i + 1) + " for " + choices[i]);
+            System.out.println("Select " + (i + 1) + " for " + choices[i].getName());
         }
 
         int userInput;
@@ -37,7 +38,7 @@ public class HumanPlayer {
             System.out.print("Option: ");
             Scanner input = new Scanner(System.in);
             userInput = input.nextInt() - 1;
-        } while ((userInput >= 0 && userInput < choices.length) == false);
+        } while (!(userInput >= 0 && userInput < choices.length));
 
         return choices[userInput];
     }
