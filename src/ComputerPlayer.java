@@ -3,9 +3,18 @@ import java.util.Random;
 public class ComputerPlayer implements Player {
 
     private String name = "Computer";
+    private int score = 0;
 
     public String getName() {
         return this.name;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 
     @Override
